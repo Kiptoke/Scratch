@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl2yjgq7wqihc"]
+
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_b4pwr"]
+[ext_resource type="Texture2D" uid="uid://dn4mfdx0kxhvc" path="res://Assets/Art/scratch.png" id="2_0bxy3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0q0i"]
+size = Vector2(64, 64)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 13
+script = ExtResource("1_b4pwr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.941176, 0.282353, 0.27451, 1)
+scale = Vector2(0.115315, 0.104065)
+texture = ExtResource("2_0bxy3")
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g0q0i")
+metadata/_edit_lock_ = true

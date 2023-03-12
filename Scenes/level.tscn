@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcftau1ygu574"]
+
+[ext_resource type="PackedScene" uid="uid://qgwyy7crv0oe" path="res://Scenes/player.tscn" id="1_4lpg1"]
+[ext_resource type="Script" path="res://Scripts/enemy_spawn.gd" id="3_rjvft"]
+
+[node name="Level" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4lpg1")]
+position = Vector2(576, 448)
+
+[node name="SpawnUp" type="Marker2D" parent="."]
+position = Vector2(576, -64)
+
+[node name="SpawnRight" type="Marker2D" parent="."]
+position = Vector2(1216, 448)
+
+[node name="SpawnDown" type="Marker2D" parent="."]
+position = Vector2(576, 960)
+
+[node name="SpawnLeft" type="Marker2D" parent="."]
+position = Vector2(-64, 448)
+
+[node name="EnemySpawnTimer" type="Timer" parent="."]
+autostart = true
+script = ExtResource("3_rjvft")
+
+[connection signal="timeout" from="EnemySpawnTimer" to="EnemySpawnTimer" method="_on_timeout"]
