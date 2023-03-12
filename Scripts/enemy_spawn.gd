@@ -12,7 +12,7 @@ func _ready():
 	randomize()
 
 func _on_timeout():
-	var i = randi() % 3
+	var i = randi() % 4
 	spawn(i)
 
 func spawn(num):

@@ -27,7 +27,6 @@ func _physics_process(_delta):
 
 func shoot(dir):
 	var bul = BULLET.instantiate()
-	print(dir)
 	if dir == "up": 
 		bul.bullet_start($MarkerUp.global_position, deg_to_rad(0))
 	elif dir == "left":

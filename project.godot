@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/level.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://Scripts/globals.gd"
+
 [display]
 
 window/size/viewport_height=896
@@ -68,3 +72,4 @@ shoot_right={
 2d_physics/layer_2="enemy"
 2d_physics/layer_3="environment"
 2d_physics/layer_4="bullets"
+2d_physics/layer_5="collectibles"

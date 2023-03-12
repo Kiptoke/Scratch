@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpius3n3xldcp"]
+
+[ext_resource type="Script" path="res://Scripts/scratchcard.gd" id="1_8vuib"]
+[ext_resource type="Texture2D" uid="uid://58yl2bxusj5j" path="res://icon.svg" id="1_o26sn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vpj70"]
+size = Vector2(24, 28)
+
+[node name="Scratchcard" type="Area2D"]
+show_behind_parent = true
+z_as_relative = false
+collision_layer = 16
+script = ExtResource("1_8vuib")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.988235, 0.611765, 0.117647, 1)
+scale = Vector2(0.1875, 0.21875)
+texture = ExtResource("1_o26sn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_vpj70")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
